@@ -61,13 +61,13 @@ Statically-typed languages:
 
 * **Performance**: Compilers generate highly optimised code
 
-## Solutions
+## Compromise solutions
 
-* Dynamic-static combinations: Vectorised PDE solvers in Python + external pre-compiled libraries (NumPy); high-level Python interface of a static PDE library (fenics), etc.
+Dynamic-static combinations: 
 
-* Constraints over the dynamic code (e.g. vectorisation)
+* Constraints over the dynamic code (e.g. vectorisation): Vectorised PDE solvers in Python + external pre-compiled libraries (NumPy) 
 
-* 2-language barrier: When changes require to get into static library
+* 2-language barrier i.e. When changes require to get into static library: high-level Python interface of a static PDE library (fenics), etc.
 
 ## Julia: a new paradigm
 
@@ -79,7 +79,7 @@ Aim: Productivity *and* performance
 
 * 21st century FORTRAN, designed from inception for numerical computations (MIT, 2011-)
 
-* Solve previous issues: for-loops not a problem, *everything* can be in Julia
+* Solve previous issues: e.g. loops not a problem, *everything* can be in Julia
 
 Let us give it a try!
 
@@ -105,7 +105,7 @@ add "Gridap"
 
 * Excellent deployment of automatically-generated code documentation in `Github`
 
-* Unit testing and performance tools [...]
+* Unit testing and performance tools
 
 ## Implementing grid-based PDE methods in Julia
 
@@ -144,7 +144,7 @@ t_Ω = AffineFETerm(a,b_Ω,trian,quad)
 
 op = LinearFEOperator(V0,Ug,b_Ω,t_Ω)
 ```
-* Nesting objects into other objects via composition (mesh in FE space in FE function + bilinear form (duck typing) + triangulation + quadrature in FE operator...). All objects are immutable
+* Nesting objects into other objects via composition (mesh in FE space in FE function + bilinear form (duck typing) + triangulation + quadrature in FE operator...). All objects are (quasi-)immutable
 
 * No numerical computations at this stage, just creating the expression tree (`∇()` and `inner`)
 
