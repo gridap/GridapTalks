@@ -1,2 +1,2 @@
-# julia-presentation
+# Gridap-presentation
 Presentation of Gridap
