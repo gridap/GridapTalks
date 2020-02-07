@@ -19,19 +19,19 @@ Advanced PDE solvers are *complex*
 
 * Complex PDEs: Multiphysics, nonlinear, multiscale, complex constitutive models
 
-* Nonlinear approximation: h-adaptive and p-adaptive methods
+* Nonlinear approximations: h-adaptive and p-adaptive methods
 
-* Multiscale methods and multilevel solvers: Strong coupling between functional setting and solvers (not black-box)
+* Multiscale methods/multilevel solvers: Strong coupling between functional setting and solvers (not black-box)
 
 * Uncertainty and quantification: intrusive polynomial chaos, (mutilevel) (quasi) Monte Carlo methods, etc
 
-* Nonlinear preconditioning, inverse problems, data-driven parameter identification [...]
-
 * Large scale computations: distributed-memory implementations
+
+* ... Nonlinear preconditioning, inverse problems, data-driven parameter identification
 
 We want to combine many ingredients!
 
-## Existing libraries
+## Existing grid-based PDE discretisation libraries
 
 Excellent pool of high-performance libraries: deal.ii, fenics, FEMPAR, MOOSE, libmesh, etc.
 
@@ -43,19 +43,19 @@ Excellent pool of high-performance libraries: deal.ii, fenics, FEMPAR, MOOSE, li
 
 ## Computational math research
 
-PhD students (3-4y), postdocs (1-3y)
+PhD students (3-4y), postdocs (1-3y) 
 
-* Starting from scratch every time not an option (hard to reach state-of-the-art interface)
+* Starting from scratch every time not an option (hard to reach state-of-the-art boundary)
 
-* New algorithms to be implemented, may involve extensions of the library core
+* New numerical algorithms to be implemented, may involve extensions of the PDE discretisation library core
 
-* Get into these libraries is *very time-consuming*
+* Get into these libraries is *very time-consuming* (no computer scientists, poor productivity)
 
 ## Dynamically- vs. statically-typed languages
 
 Dynamically-typed languages:
 
-* **Productivity**: More expressive, no compilation step (problematic for large libraries), interactive development (debugging on-the-fly), better for math-related bugs (no benefit from static compilation), no set-up of environment (compilers, system libraries, etc)
+* **Productivity**: More expressive (duck typing), no compilation step (problematic for large libraries), interactive development (debugging on-the-fly e.g. in `ATOM`), static compilation not detecting math-related bugs, no set-up of environment (compilers, system libraries, etc) [...]
 
 Statically-typed languages:
 
