@@ -33,7 +33,7 @@ We want to combine many ingredients!
 
 ## Existing libraries
 
-Excellent pool of high-performance libraries: deal.ii, fenics, FEMPAR, MOOSE, libmesh, etc.
+Excellent pool of high-performance libraries: deal.ii, fenics, FEMPAR, MOOSE, libmesh, Firedrake, DUNE, etc.
 
 * C++ or OO FORTRAN08 (static/compiled languages), some w/ Python interfaces (dynamic languages)
 
@@ -85,7 +85,7 @@ Let us give it a try!
 
 ## Julia features
 
-* Multiple dispatching paradigm: functions not bond to types, dispatching wrt all arguments (solving multiple inheritance issues)
+* Multiple dispatching paradigm: functions not bound to types, dispatching wrt all arguments (solving multiple inheritance issues)
 
 * Not OO: No inheritance of concrete types (only abstract types), *use composition, not inheritance*, *classify by their actions, not their attributes*...
 
