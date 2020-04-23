@@ -12,7 +12,7 @@ To install the jupyter notebooks, do the following
 $ git clone https://github.com/gridap/Tutorials.git
 ```
 
-Move into the folder and open a Julia REPL setting the current folder as the project environment
+Move into the folder and open a `Julia` REPL setting the current folder as the project environment
 
 ```
 $ cd Gridap-presentation/lazy-matrix-notebook/
