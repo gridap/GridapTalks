@@ -8,6 +8,33 @@ You can also find a jupyter notebook in which I have created a very simple examp
 
 To install the jupyter notebooks, do the following:
 
+```
+$ git clone https://github.com/gridap/Tutorials.git
+```
+
+Move into the folder and open a Julia REPL setting the current folder as the project environment.
+
+```
+$ cd Gridap-presentation/lazy-matrix-notebook/
+$ julia
+```
+In the Julia REPL
+```
+julia> 
+```
+Type `]` to enter in pkg mode, activate the project
+```
+(@v1.4) pkg> activate .
+```
+and instantiate the envorinment
+```
+(lazy-matrix-notebook) pkg> instantiate
+```
+Open the notebook using these commands
+```
+julia> using IJulia
+julia> notebook(dir=pwd())
+```
 
 
 
