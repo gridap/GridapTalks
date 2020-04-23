@@ -1,4 +1,4 @@
-# Gridap presentations
+# Gridap Talks
 
 In this repos you can find some material I have recently develop for presenting the `Gridap` library.
 
