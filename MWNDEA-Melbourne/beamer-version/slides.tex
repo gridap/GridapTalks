@@ -1,15 +1,15 @@
 
 \begin{frame}{Numerical PDE solvers}
 
-\paragraph{\textbf{PDEs:}} multiphysics, multiscale, constitutive models
+{\textbf{PDEs:}} multiphysics, multiscale, constitutive models
 
-\paragraph{\textbf{Discretisation:}} (grad, curl, div)-conforming, dG, unfitted FEM, hybrid and virtual elements, h/p-adaptivity
+{\textbf{Discretisation:}} (grad, curl, div)-conforming, dG, unfitted FEM, hybrid and virtual elements, h/p-adaptivity
 
-\paragraph{\textbf{(Non)linear solvers:}} multiscale/multilevel solvers strongly coupled to PDE structure (not black-box)
+{\textbf{(Non)linear solvers:}} multiscale/multilevel solvers strongly coupled to PDE structure (not black-box)
 
-\paragraph{\textbf{Large scale computations:}} distributed-memory implementations, accelerators, ...
+{\textbf{Large scale computations:}} distributed-memory implementations, accelerators, ...
 
-\paragraph{\textbf{Other ingredients:}} forward/inverse UQ, data-driven parameter identification, ...
+{\textbf{Other ingredients:}} forward/inverse UQ, data-driven parameter identification, ...
 
 \end{frame}
 
@@ -201,7 +201,7 @@ CellField is a key Gridap type
 We also implement CellField operations:
 
 \begin{itemize}
-\item Unary operations: e.g. $\nabla()$, $\nabla\times()$, $\nabla \cdot()$, etc.
+\item Unary operations: %e.g. $\nabla()$, $\nabla\times()$, $\nabla \cdot()$, etc.
 \item Binary operations: inner$(,)$, $\times$, etc.
 \end{itemize}
 
@@ -218,7 +218,7 @@ Let us look at Gridap Tutorial 1
 
 \item Nesting objects into other objects via composition (mesh in FE space in FE function + bilinear form (duck typing) + triangulation + quadrature in FE operator...). All objects are immutable
 
-\item No numerical computations at FEOperator declaration yet, just creating the expression tree (`∇()` and `inner`)
+\item No numerical computations at FEOperator declaration yet, just creating the expression tree ($\nabla()$ and `inner`)
 
 \item Numerically intensive computations deployed in solve
 
