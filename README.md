@@ -1,6 +1,6 @@
 # Gridap Talks
 
-In this repos you can find some material I have recently develop for presenting the `Gridap` library.
+In this repos you can find some material I have recently develop for presenting the [`Gridap`](https://github.com/gridap/Gridap.jl) library.
 
 You can find the slides of the **Monash Workshop on Numerical Differential Equations with Applications**, Melbourne, February 14th 2020 2, [here](https://github.com/santiagobadia/Gridap-presentation/blob/master/MWNDEA-Melbourne/beamer-version/sbadia-mwndea.pdf) and the slides of the **UNSW Online Computational Mathematics Seminar**, Melbourne-Sydney, April 21st 2020, [here](https://github.com/santiagobadia/Gridap-presentation/blob/master/UNSW-comp-math-seminar/beamer-version/sbadia-unsw.pdf), together with the video recording of the online seminar that you can download from [here](https://github.com/santiagobadia/Gridap-presentation/blob/master/unsw-video/unsw-gridap-seminar-compressed.mp4).
 
