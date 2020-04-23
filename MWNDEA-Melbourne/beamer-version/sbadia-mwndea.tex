@@ -1,0 +1,177 @@
+
+\pdfminorversion=4
+% \def\printmode{1}
+\ifx\printmode\undefined
+\documentclass[12pt,mathserif,xcolor={dvipsnames}]{beamer}      % only frames
+\else
+%%%% print frame + notes
+\documentclass[9pt,a4paper,mathserif,notes,xcolor={dvipsnames},handout]{beamer}
+\usepackage{pgfpages}
+\mode<handout>{\setbeamertemplate{background}
+  {
+    \begin{tikzpicture}[remember picture, overlay]
+      \draw (current page.north west) rectangle (current page.south east);
+    \end{tikzpicture}
+  }
+}
+\pgfpagesuselayout{2 on 1}[letterpaper,border shrink=5mm]
+\fi
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{multimedia}
+\usepackage{listings}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage{subfigure}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{52}}%
+\newcommand{\xmark}{\ding{56}}%
+\newcommand{\vardiamond}{\ding{169}}%
+\usepackage{tabularx}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\usetheme[block=fill]{metropolis}
+\usepackage{latexsym,algorithmic,algorithm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{helvet}
+\usepackage{color}
+\usepackage{wasysym}
+\usepackage{multirow}
+\usepackage{booktabs}
+\setbeamercolor{background canvas}{bg=white}
+\usepackage{animate}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usepackage[siunitx]{circuitikz}
+
+\graphicspath{{figures/}{logos/}}
+
+\def\albf#1#2{{\only<#1>{{\bf #2}}}}
+\def\alblue#1#2{{\only<#1>{\color{blue}}#2}}
+\def\algreen#1#2{{\only<#1>{\color{green}}#2}}
+\def\alorange#1#2{{\only<#1>{\color{orange}}#2}}
+
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+% No navigation bar
+\beamertemplatenavigationsymbolsempty
+
+\title[]{Gridap: Towards productivity and performance in Julia}
+\author[S. Badia]{{\underline{Santiago Badia}, F. Verdugo}}
+\date{\small MWNDEA \\ Monash University, February 14th 2020}
+\titlegraphic{
+  \begin{center}
+  \end{center}
+}
+\defbeamertemplate{section in toc}{simple}{\inserttocsectionnumber.~\inserttocsection}
+\setbeamertemplate{section in toc}[simple]
+\setbeamercolor{footline}{fg=white!40!black}
+\definecolor{nicegrey}{RGB}{26,42,68}
+\setbeamercolor{frametitle}{bg=nicegrey}
+\setbeamertemplate{frame numbering}[fraction]
+\setbeamertemplate{frame footer}[custom]{S. Badia}
+\defbeamertemplate{footline}{lssc}{%
+  \begin{beamercolorbox}[wd=\textwidth, sep=0ex]{footline}%
+    \usebeamerfont{page number in head/foot}%
+    \hspace{3ex}
+    \hfill%
+    \usebeamertemplate*{frame footer}
+    % \hspace{1em}
+    % \usebeamertemplate*{frame numbering}
+    \hspace{3ex}
+  \end{beamercolorbox}%
+  % \vspace{1.5ex}
+  \vspace{1.5em}
+}
+\setbeamertemplate{footline}[lssc]
+\defbeamertemplate{note page}{lssc}{%
+  \vspace{1em}
+  \insertnote%
+}
+\setbeamertemplate{note page}[lssc]
+\setbeamertemplate{title page}{
+  \begin{minipage}[b][\paperheight]{\textwidth}
+    \begin{center}
+      \ifx\inserttitlegraphic\@empty\else\usebeamertemplate*{title graphic}\fi
+      \vfill%
+      \ifx\inserttitle\@empty\else\usebeamertemplate*{title}\fi
+      \ifx\insertsubtitle\@empty\else\usebeamertemplate*{subtitle}\fi
+      \vspace{-2em}
+      \ifx\beamer@shortauthor\@empty\else\usebeamertemplate*{author}\fi
+      \vspace{1em}
+      % \usebeamertemplate*{title separator}
+      \includegraphics[width=\textwidth]{growingInTime.png}%{popctitle.png}
+      \vspace{1em}
+      \ifx\insertdate\@empty\else\usebeamertemplate*{date}\fi
+      \ifx\insertinstitute\@empty\else\usebeamertemplate*{institute}\fi
+      \vspace{0.0em}
+      \includegraphics[height=0.15\textwidth]{logos/monash.jpg}%\hspace*{0.5cm}
+%      \includegraphics[height=0.08\textwidth]{logo-cimne.pdf}\hspace*{0.5cm}
+%      \includegraphics[height=0.06\textwidth]{logo-lssc.pdf}
+      \vfill
+      \vspace*{1mm}
+    \end{center}
+  \end{minipage}
+}
+\setbeamertemplate{title}{
+  % \raggedright%
+  \linespread{1.0}%
+  \inserttitle%
+  \par%
+  \vspace*{0.5em}
+}
+\def\insertframetitle{}
+\makeatletter
+\defbeamertemplate*{frametitle}{lssc}{%
+  \nointerlineskip%
+  \vspace{0.02\paperwidth}
+  \begin{beamercolorbox}[%
+    wd=0.96\paperwidth,%
+    sep=0pt,%
+    leftskip=\metropolis@frametitle@padding,%
+    rightskip=\metropolis@frametitle@padding,%
+    ]{frametitle}%
+    \metropolis@frametitlestrut@start%
+    \insertframetitle%
+    \hfill
+    \insertframenumber
+    \raisebox{-0.3em}{/\inserttotalframenumber}
+    \nolinebreak%
+    \metropolis@frametitlestrut@end%
+  \end{beamercolorbox}%
+}
+\makeatother
+
+\graphicspath{{figures/}{logos/}}
+
+\begin{document}
+
+\addtocounter{framenumber}{-1}
+% AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+\frame[plain]{
+  \titlepage
+}
+% ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+
+\makeatletter
+\newcommand{\opnorm}{\@ifstar\@opnorms\@opnorm}
+\newcommand{\@opnorms}[1]{%
+    \left|\mkern-1.5mu\left|\mkern-1.5mu\left|
+       #1
+         \right|\mkern-1.5mu\right|\mkern-1.5mu\right|
+       }
+       \newcommand{\@opnorm}[2][]{%
+           \mathopen{#1|\mkern-1.5mu#1|\mkern-1.5mu#1|}
+             #2
+               \mathclose{#1|\mkern-1.5mu#1|\mkern-1.5mu#1|}
+             }
+             \makeatother
+
+
+\input{slides.tex}
+
+\end{document}
